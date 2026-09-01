@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- 
+    Moje osobní stránka - školní projekt do IT
+    Autor: Tadeáš Saur
+
+    ============================================================
+    Vytvořil: Tadeáš Saur
+    * Zneužití kódu je přísné zakázáno autorem tohoto kódu 
+      "Tadeax Studio", kód lze změnit pouze s povolením autora *
+    * Tento kód slouží jako školní projekt pro mojí školu - 
+      Soukromá střední odborná škola Litoměřice Máchovy Schody - 
+      Obor Informační technologie *
+    ============================================================
+-->
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <!-- UTF-8 = aby se správně zobrazovaly české znaky (ě š č ř ž) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tadeáš Saur</title>
+
+    <style>
+        /* Základní styl pro celou stránku */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #cccccc;
+            /* jednoduchá čára pod nadpisem místo barevné */
+        }
+
+        /* Jednoduché podtržené odkazy v navigaci */
+        nav a {
+            margin-right: 15px;
+        }
+
+        /* Oddělovač mezi sekcemi */
+        hr {
+            margin: 30px 0;
+        }
+
+        /* Jednoduché tlačítko, žádné efekty */
+        button {
+            padding: 8px 15px;
+            font-size: 1em;
+        }
+
+        li {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Hlavička ===== -->
+    <h1>Ahoj, jmenuji se Tadeáš Saur</h1>
+    <p>Studuji 1. ročník SŠ, obor IT</p>
+
+    <!-- ===== Navigace ===== -->
+    <!-- Odkazy s # vedou na sekce níže na stránce -->
+    <nav>
+        <a href="#o-mne">O mně</a>
+        <a href="#koniky">Koníčky</a>
+        <a href="#skola">Škola</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <hr>
+
+    <!-- ===== O mně ===== -->
+    <h2 id="o-mne">O mně</h2>
+    <p>
+        Ahoj! Jsem kluk, který teprve začíná s programováním, ale mám 
+        velké plány - chtěl bych se naučit programovat až na úroveň 
+        jazyka C++, což je podle mě jedna z nejtěžších úrovní. 
+        Do budoucna bych chtěl svoje znalosti využít k tomu, abych 
+        pomáhal lidem - ať už s vytvořením hry, webové stránky, 
+        nebo mnoha dalších věcí. Kromě toho jsem taky youtuber - mám 
+        svůj vlastní kanál na YouTube, který sleduje více než 
+        1000 odběratelů.
+    </p>
+
+    <hr>
+
+    <!-- ===== Koníčky ===== -->
+    <h2 id="koniky">Moje koníčky</h2>
+    <ul>
+        <li>Programování (Začínající)</li>
+        <li>Trainspotting (Šotouš / natáčení vlaků, MHD, atd.)</li>
+        <li>Cestování (Letadlem, vlakem, atd.)</li>
+        <li>Hudba</li>
+        <li>Blogging</li>
+    </ul>
+
+    <hr>
+
+    <!-- ===== Škola ===== -->
+    <h2 id="skola">Moje škola</h2>
+    <p>Studuji obor Informační technologie, 1. ročník.</p>
+    <p>Moje oblíbené předměty:</p>
+    <ul>
+        <li>Programování</li>
+        <li>Počítačové sítě</li>
+    </ul>
+
+    <hr>
+
+    <!-- ===== Interaktivní část s JavaScriptem ===== -->
+    <h2>Vyzkoušej si JavaScript</h2>
+    <p>Klikni na tlačítko a JavaScript ti vypíše náhodný pozdrav:</p>
+    <button onclick="vypisPozdrav()">Klikni na mě</button>
+    <p id="vysledek"></p>
+
+    <hr>
+
+    <!-- ===== Kontakt ===== -->
+    <h2 id="kontakt">Kontakt</h2>
+    <p>Email: tad.studio.cz@gmail.com</p>
+    <p>Pokud chceš, napiš mi zprávu:</p>
+
+    <!-- Jednoduchý formulář, zatím bez odesílání na server -->
+    <form onsubmit="return odeslatZpravu(event)">
+        <input type="text" id="jmeno" placeholder="Tvé jméno" required><br><br>
+        <textarea id="zprava" placeholder="Tvá zpráva" required></textarea><br><br>
+        <button type="submit">Odeslat</button>
+    </form>
+    <p id="potvrzeni"></p>
+
+    <hr>
+
+    <p><small>&copy; 2026 Tadeáš Saur - školní projekt</small></p>
+
+    <p><small><em>
+        * Zneužití kódu je přísné zakázáno autorem tohoto kódu "Tadeax Studio", 
+        kód lze změnit pouze s povolením autora *<br>
+        * Tento kód slouží jako školní projekt pro mojí školu - 
+        Soukromá střední odborná škola Litoměřice Máchovy Schody - 
+        Obor Informační technologie *
+    </em></small></p>
+
+    <script>
+        /* 
+            JavaScript - kód, který stránku "oživí"
+        */
+
+        // Funkce se spustí po kliknutí na tlačítko
+        function vypisPozdrav() {
+            // pole (array) s několika pozdravy
+            let pozdravy = [
+                "Ahoj! Díky, že sis prohlédl mou stránku.",
+                "Super, že testuješ JavaScript!",
+                "Programování je zábava, že?",
+                "Tohle tlačítko funguje díky JavaScriptu!"
+            ];
+
+            // Math.random() vrátí náhodné číslo mezi 0 a 1
+            // vynásobením délkou pole a zaokrouhlením dolů získáme 
+            // náhodný index v poli
+            let nahodnyIndex = Math.floor(Math.random() * pozdravy.length);
+
+            // najdeme element s id="vysledek" a vložíme do něj text
+            document.getElementById("vysledek").textContent = pozdravy[nahodnyIndex];
+        }
+
+        // Funkce se spustí při odeslání formuláře
+        function odeslatZpravu(event) {
+            // zabrání tomu, aby se stránka po odeslání znovu načetla
+            event.preventDefault();
+
+            // načteme text, který uživatel napsal do pole "jméno"
+            let jmeno = document.getElementById("jmeno").value;
+
+            // vypíšeme potvrzovací zprávu
+            document.getElementById("potvrzeni").textContent = 
+                "Díky za zprávu, " + jmeno + "! (Toto je jen ukázka, nic se neodesílá.)";
+
+            // vyčistíme formulář
+            document.getElementById("jmeno").value = "";
+            document.getElementById("zprava").value = "";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
