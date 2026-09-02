@@ -56,6 +56,15 @@
             font-size: 1em;
         }
 
+        /* Modré tlačítko - vypadá stejně jako odkaz v navigaci */
+        .modre-tlacitko {
+            background: none;
+            color: #0000EE;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
         li {
             margin-left: 20px;
         }
@@ -73,6 +82,9 @@
         <a href="#o-mne">O mně</a>
         <a href="#koniky">Koníčky</a>
         <a href="#skola">Škola</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#hra">Hra</a>
+        <a href="#odkazy">Odkazy</a>
         <a href="#kontakt">Kontakt</a>
     </nav>
 
@@ -116,11 +128,49 @@
 
     <hr>
 
+    <!-- ===== Moje projekty ===== -->
+    <h2 id="projekty">Moje projekty</h2>
+    <p>Tady je pár věcí, na kterých teď pracuji nebo je plánuji udělat:</p>
+    <ul>
+        <li>Tahle osobní webová stránka (školní projekt do IT)</li>
+        <li>Učím se základy JavaScriptu a chci pokračovat dál k C++</li>
+        <li>Videa na YouTube kanál</li>
+        <li>V plánu: vlastní jednoduchá hra</li>
+    </ul>
+
+    <hr>
+
     <!-- ===== Interaktivní část s JavaScriptem ===== -->
     <h2>Vyzkoušej si JavaScript</h2>
     <p>Klikni na tlačítko a JavaScript ti vypíše náhodný pozdrav:</p>
     <button onclick="vypisPozdrav()">Klikni na mě</button>
     <p id="vysledek"></p>
+
+    <hr>
+
+    <!-- ===== Hra: Kámen, nůžky, papír ===== -->
+    <h2 id="hra">Hra: Kámen, nůžky, papír</h2>
+    <p>Vyber si jednu z možností a zahraj si proti počítači:</p>
+
+    <button class="modre-tlacitko" onclick="hraj('kámen')">🪨 Kámen</button>
+    <button class="modre-tlacitko" onclick="hraj('nůžky')">✂️ Nůžky</button>
+    <button class="modre-tlacitko" onclick="hraj('papír')">📄 Papír</button>
+
+    <p id="vysledekHry"></p>
+
+    <hr>
+
+    <!-- ===== Odkazy ===== -->
+    <h2 id="odkazy">Moje odkazy</h2>
+    <p>Tlačítka níže tě pomocí JavaScriptu přesměrují na jinou stránku:</p>
+
+    <button onclick="otevriOdkaz('https://youtube.com/@tadeaxstudio-official?si=q_4mVLGflVFNWVs-')">
+        ▶️ Můj YouTube kanál
+    </button>
+
+    <button onclick="otevriOdkaz('https://1kspa.wordpress.com')">
+        🏫 Webovka mé školy
+    </button>
 
     <hr>
 
@@ -133,13 +183,14 @@
     <form onsubmit="return odeslatZpravu(event)">
         <input type="text" id="jmeno" placeholder="Tvé jméno" required><br><br>
         <textarea id="zprava" placeholder="Tvá zpráva" required></textarea><br><br>
-        <button type="submit">Odeslat</button>
+        <button class="modre-tlacitko" type="submit">Odeslat</button>
     </form>
     <p id="potvrzeni"></p>
 
     <hr>
 
     <p><small>&copy; 2026 Tadeáš Saur - školní projekt</small></p>
+    <p id="datum"></p>
 
     <p><small><em>
         * Zneužití kódu je přísné zakázáno autorem tohoto kódu "Tadeax Studio", 
@@ -153,6 +204,13 @@
         /* 
             JavaScript - kód, který stránku "oživí"
         */
+
+        // new Date() vytvoří objekt s aktuálním datem a časem
+        let dnes = new Date();
+
+        // toLocaleDateString("cs-CZ") naformátuje datum do českého formátu
+        document.getElementById("datum").textContent = 
+            "Stránka naposledy zobrazena: " + dnes.toLocaleDateString("cs-CZ");
 
         // Funkce se spustí po kliknutí na tlačítko
         function vypisPozdrav() {
@@ -171,6 +229,55 @@
 
             // najdeme element s id="vysledek" a vložíme do něj text
             document.getElementById("vysledek").textContent = pozdravy[nahodnyIndex];
+        }
+
+        // ===== Hra: Kámen, nůžky, papír =====
+        // Tato funkce se spustí, když klikneš na jedno z tlačítek 
+        // (kámen, nůžky nebo papír). Parametr "hracVolba" obsahuje 
+        // to, co si vybral hráč.
+        function hraj(hracVolba) {
+
+            // pole možností, ze kterých bude vybírat počítač
+            let moznosti = ["kámen", "nůžky", "papír"];
+
+            // počítač si vybere náhodnou možnost - stejný princip 
+            // jako u funkce vypisPozdrav() výše
+            let pocitacVolba = moznosti[Math.floor(Math.random() * moznosti.length)];
+
+            let vysledek = ""; // sem uložíme text s výsledkem hry
+
+            // Nejdřív ověříme, jestli je remíza
+            if (hracVolba === pocitacVolba) {
+                vysledek = "Remíza! Oba jste zvolili " + hracVolba + ".";
+            } 
+            // Pak postupně kontrolujeme všechny kombinace, kdy vyhraje HRÁČ
+            // (kámen drtí nůžky, nůžky stříhají papír, papír balí kámen)
+            else if (
+                (hracVolba === "kámen" && pocitacVolba === "nůžky") ||
+                (hracVolba === "nůžky" && pocitacVolba === "papír") ||
+                (hracVolba === "papír" && pocitacVolba === "kámen")
+            ) {
+                vysledek = "Vyhrál jsi! " + hracVolba + " poráží " + pocitacVolba + ".";
+            } 
+            // Pokud to nebyla remíza ani výhra hráče, musí vyhrát počítač
+            else {
+                vysledek = "Prohrál jsi! Počítač zvolil " + pocitacVolba + 
+                            " a poráží tvůj " + hracVolba + ".";
+            }
+
+            // vypíšeme výsledek do stránky
+            document.getElementById("vysledekHry").textContent = vysledek;
+        }
+
+        // ===== Odkazy =====
+        // Tato funkce se spustí po kliknutí na tlačítko a přesměruje 
+        // prohlížeč na jinou webovou stránku. Parametr "adresa" 
+        // obsahuje URL adresu, kam chceme uživatele poslat.
+        function otevriOdkaz(adresa) {
+            // window.open() otevře zadanou adresu v novém panelu
+            // (kdybychom chtěli otevřít ve stejném panelu, použili 
+            // bychom místo toho: window.location.href = adresa;)
+            window.open(adresa, "_blank");
         }
 
         // Funkce se spustí při odeslání formuláře
@@ -195,3 +302,4 @@
 
 </body>
 </html>
+
