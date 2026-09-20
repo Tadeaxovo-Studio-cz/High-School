@@ -3,80 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tadeaxovo Studio | Creative Digital Agency</title>
+    <title>Tadeaxovo Studio | Next-Level Creative Systems</title>
     <meta
       name="description"
-      content="Tadeaxovo Studio builds modern, high-impact digital experiences for brands that want to grow."
+      content="Tadeaxovo Studio creates cinematic digital experiences, immersive branding, and growth systems for ambitious businesses."
     />
+    <meta name="theme-color" content="#070b14" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="noise"></div>
+    <div class="cursor-glow"></div>
+
     <header class="site-header">
       <div class="container nav-wrap">
         <a href="#top" class="brand" aria-label="Tadeaxovo Studio home">
           <span class="brand-mark">T</span>
           <span>Tadeaxovo Studio</span>
         </a>
+
         <nav class="main-nav" aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#services">Services</a>
+          <a href="#systems">Systems</a>
           <a href="#work">Work</a>
+          <a href="#process">Process</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a href="#contact" class="button button-small">Book a call</a>
+
+        <a href="#contact" class="button button-small magnetic">Book a call</a>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero section-wrap">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+
         <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Bold ideas. Real growth.</p>
-            <h1>We craft digital experiences that people remember.</h1>
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Immersive strategy · bold design · scalable growth</p>
+            <h1>
+              We build <span>high-impact</span> digital ecosystems that move markets.
+            </h1>
             <p class="lead">
-              Tadeaxovo Studio helps businesses launch standout brands, sleek websites,
-              and conversion-focused digital products that perform.
+              Tadeaxovo Studio creates premium brands, cinematic websites, and conversion-focused
+              experiences designed to turn attention into revenue.
             </p>
+
             <div class="hero-actions">
-              <a href="#contact" class="button">Start your project</a>
-              <a href="#work" class="button button-secondary">View our work</a>
+              <a href="#contact" class="button magnetic">Start your project</a>
+              <a href="#work" class="button button-secondary magnetic">Explore work</a>
             </div>
-            <ul class="stats" aria-label="Key performance metrics">
-              <li><strong>120+</strong><span>Projects</span></li>
-              <li><strong>4.9/5</strong><span>Client rating</span></li>
-              <li><strong>30%</strong><span>Avg. uplift</span></li>
+
+            <ul class="stats" aria-label="Key metrics">
+              <li>
+                <strong data-count="120">0</strong>
+                <span>Projects launched</span>
+              </li>
+              <li>
+                <strong data-count="4.9">0</strong>
+                <span>Average rating</span>
+              </li>
+              <li>
+                <strong data-count="30">0</strong>
+                <span>Growth uplift</span>
+              </li>
             </ul>
           </div>
 
-          <div class="hero-visual" aria-label="Project preview card">
-            <div class="mockup-window">
-              <div class="window-bar">
-                <span></span>
-                <span></span>
-                <span></span>
+          <div class="hero-visual reveal">
+            <div class="dashboard-shell">
+              <div class="dashboard-header">
+                <span class="dot red"></span>
+                <span class="dot amber"></span>
+                <span class="dot green"></span>
               </div>
-              <div class="window-content">
-                <div class="mini-chart">
-                  <div class="bar one"></div>
-                  <div class="bar two"></div>
-                  <div class="bar three"></div>
-                  <div class="bar four"></div>
-                  <div class="bar five"></div>
-                </div>
-                <div class="cards-row">
-                  <div class="mini-card">
-                    <p>Revenue</p>
-                    <strong>+48%</strong>
+
+              <div class="dashboard-body">
+                <div class="analytic-panel large-panel">
+                  <div class="panel-label">Performance</div>
+                  <div class="ring-chart">
+                    <div class="ring-ring"></div>
+                    <div class="ring-center">
+                      <span>84%</span>
+                    </div>
                   </div>
-                  <div class="mini-card accent">
-                    <p>Leads</p>
-                    <strong>3.2k</strong>
+                </div>
+
+                <div class="analytic-panel small-panel">
+                  <div class="panel-label">Revenue</div>
+                  <strong>$128K</strong>
+                  <span class="trend positive">+32.8%</span>
+                </div>
+
+                <div class="analytic-panel small-panel alt-panel">
+                  <div class="panel-label">Audience</div>
+                  <strong>89.4K</strong>
+                  <span class="trend positive">+18.2%</span>
+                </div>
+
+                <div class="chart-panel">
+                  <div class="chart-bars">
+                    <span style="--h: 30%"></span>
+                    <span style="--h: 52%"></span>
+                    <span style="--h: 44%"></span>
+                    <span style="--h: 70%"></span>
+                    <span style="--h: 63%"></span>
+                    <span style="--h: 92%"></span>
+                    <span style="--h: 85%"></span>
+                    <span style="--h: 100%"></span>
                   </div>
                 </div>
               </div>
@@ -85,112 +127,205 @@
         </div>
       </section>
 
-      <section class="logo-strip" aria-label="Trusted by brands">
-        <div class="container logo-row">
-          <span>Nova</span>
-          <span>Northstar</span>
-          <span>PixelForge</span>
-          <span>Summit</span>
-          <span>Flux</span>
+      <section class="marquee-wrap">
+        <div class="marquee-track">
+          <span>brand strategy</span>
+          <span>web design</span>
+          <span>creative direction</span>
+          <span>product experiences</span>
+          <span>growth systems</span>
+          <span>brand strategy</span>
+          <span>web design</span>
+          <span>creative direction</span>
+          <span>product experiences</span>
+          <span>growth systems</span>
         </div>
       </section>
 
-      <section id="about" class="section">
-        <div class="container two-column">
-          <div>
-            <p class="eyebrow">Who we are</p>
-            <h2>Built for ambitious brands ready to stand out.</h2>
+      <section id="about" class="section-wrap soft-panel">
+        <div class="container split-block">
+          <div class="section-copy reveal">
+            <p class="eyebrow">Why us</p>
+            <h2>Strategy + design + engineering under one creative system.</h2>
           </div>
-          <div>
+
+          <div class="section-copy reveal">
             <p>
-              We combine strategy, design, and development to help growing businesses
-              turn attention into action. Every project is shaped around clarity,
-              performance, and memorable customer experience.
+              We blend storytelling, conversion strategy, and product thinking to turn abstract ideas
+              into immersive digital experiences that people remember and businesses can scale.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="services" class="section muted-section">
+      <section id="systems" class="section-wrap">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">What we do</p>
-            <h2>Everything your digital presence needs.</h2>
+            <h2>End-to-end systems built for ambition.</h2>
           </div>
 
           <div class="cards-grid">
-            <article class="info-card">
-              <div class="icon">01</div>
-              <h3>Brand strategy</h3>
+            <article class="feature-card reveal tilt-card">
+              <div class="feature-index">01</div>
+              <h3>Brand systems</h3>
               <p>
-                Positioning, messaging, and visual direction that help your business
-                connect with the right audience.
+                Positioning, messaging, identity, and visual direction that create immediate recognition.
               </p>
             </article>
 
-            <article class="info-card">
-              <div class="icon">02</div>
-              <h3>Web design</h3>
+            <article class="feature-card reveal tilt-card">
+              <div class="feature-index">02</div>
+              <h3>Web experiences</h3>
               <p>
-                Beautiful, conversion-focused interfaces designed to impress and guide
-                users toward action.
+                Premium landing pages, product experiences, and immersive websites built for conversion.
               </p>
             </article>
 
-            <article class="info-card">
-              <div class="icon">03</div>
-              <h3>Development</h3>
+            <article class="feature-card reveal tilt-card">
+              <div class="feature-index">03</div>
+              <h3>Growth systems</h3>
               <p>
-                Fast, responsive, and maintainable websites and apps built for real-world
-                performance.
+                Performance strategy, UX optimization, and funnel design that scale customer acquisition.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="work" class="section">
+      <section id="work" class="section-wrap dark-panel">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">Selected work</p>
-            <h2>Results-driven design with measurable impact.</h2>
+            <h2>We build experiences with measurable impact.</h2>
           </div>
 
-          <div class="work-grid">
-            <article class="project-card">
-              <div class="project-visual visual-one"></div>
+          <div class="project-grid">
+            <article class="project-card reveal tilt-card">
+              <div class="project-image image-one"></div>
               <div class="project-copy">
+                <div class="project-meta">
+                  <span>Luxury commerce</span>
+                  <span>+42%</span>
+                </div>
                 <h3>Nova Commerce</h3>
-                <p>Luxury ecommerce rebuild with a 42% increase in conversion rate.</p>
+                <p>Immersive storefront and premium digital identity designed to elevate a luxury brand.</p>
               </div>
             </article>
 
-            <article class="project-card">
-              <div class="project-visual visual-two"></div>
+            <article class="project-card reveal tilt-card">
+              <div class="project-image image-two"></div>
               <div class="project-copy">
+                <div class="project-meta">
+                  <span>SaaS launch</span>
+                  <span>+68%</span>
+                </div>
                 <h3>Northstar Labs</h3>
-                <p>Modern SaaS landing page designed to turn traffic into qualified leads.</p>
+                <p>High-converting product narrative and sales funnel built to accelerate early traction.</p>
               </div>
             </article>
 
-            <article class="project-card">
-              <div class="project-visual visual-three"></div>
+            <article class="project-card reveal tilt-card">
+              <div class="project-image image-three"></div>
               <div class="project-copy">
+                <div class="project-meta">
+                  <span>Fitness brand</span>
+                  <span>+31%</span>
+                </div>
                 <h3>Summit Fitness</h3>
-                <p>Brand refresh and website redesign that improved membership signups.</p>
+                <p>Brand refresh and growth-focused website transformation for a modern wellness brand.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section cta-section">
-        <div class="container cta-box">
-          <div>
-            <p class="eyebrow">Let’s build something brilliant</p>
-            <h2>Ready to turn your next idea into a standout digital experience?</h2>
+      <section id="process" class="section-wrap">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Process</p>
+            <h2>From concept to conversion.</h2>
           </div>
-          <a href="#contact" class="button">Get started</a>
+
+          <div class="timeline">
+            <div class="timeline-item reveal">
+              <span class="phase">01</span>
+              <div>
+                <h3>Discover</h3>
+                <p>We map your market, message, and opportunity to uncover the strongest creative direction.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <span class="phase">02</span>
+              <div>
+                <h3>Design</h3>
+                <p>We shape premium visual systems and experience flows that align with your goals.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <span class="phase">03</span>
+              <div>
+                <h3>Build</h3>
+                <p>We turn the strategy into responsive, high-performance digital products and launch assets.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <span class="phase">04</span>
+              <div>
+                <h3>Optimize</h3>
+                <p>We measure, iterate, and improve based on performance signals and customer behavior.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap testimonials-wrap">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Testimonials</p>
+            <h2>Teams trust us to make their next move unforgettable.</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <blockquote class="testimonial reveal tilt-card">
+              “They transformed a weak digital presence into a brand experience customers actually talk about.”
+              <footer>
+                <strong>Marina Voss</strong>
+                <span>Founder, Nova Commerce</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial reveal tilt-card">
+              “Their blend of strategy and design gave us clarity, momentum, and a huge boost in demo volume.”
+              <footer>
+                <strong>Daniel Lee</strong>
+                <span>CEO, Northstar Labs</span>
+              </footer>
+            </blockquote>
+
+            <blockquote class="testimonial reveal tilt-card">
+              “Every interaction felt elevated. The product and storytelling worked together beautifully.”
+              <footer>
+                <strong>Elena Hart</strong>
+                <span>Marketing Director, Summit</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap cta-wrap">
+        <div class="container cta-box reveal">
+          <div>
+            <p class="eyebrow">Let’s build the next big move</p>
+            <h2>Your next digital presence should feel impossible to ignore.</h2>
+          </div>
+
+          <a href="#contact" class="button magnetic">Schedule a strategy call</a>
         </div>
       </section>
     </main>
@@ -202,15 +337,16 @@
             <span class="brand-mark">T</span>
             <span>Tadeaxovo Studio</span>
           </a>
-          <p>Creative strategy, design, and development for modern brands.</p>
+          <p>Creative systems, digital experiences, and high-converting web design for ambitious brands.</p>
         </div>
 
-        <div class="contact-box">
+        <div class="contact-block">
           <h3>Contact</h3>
-          <p><a href="mailto:hello@tadeaxovostudio.com">hello@tadeaxovostudio.com</a></p>
-          <p><a href="tel:+420000000000">+420 000 000 000</a></p>
+          <a href="mailto:hello@tadeaxovostudio.com">hello@tadeaxovostudio.com</a>
+          <a href="tel:+420000000000">+420 000 000 000</a>
         </div>
       </div>
+
       <div class="container bottom-bar">
         <span>© 2026 Tadeaxovo Studio</span>
         <div class="socials">
